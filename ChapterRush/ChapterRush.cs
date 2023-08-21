@@ -81,6 +81,10 @@ namespace ChapterRush
             target = typeof(LeaderboardIntegrationSteam).GetMethod("UploadScore_LevelRush", flags);
             patch = new(typeof(ChapterRush).GetMethod("PreUploadScore_LevelRush"));
             harmony.Patch(target, patch);
+
+            target = typeof(Achievements).GetMethod("SyncLevelRushAchievements", flags);
+            patch = new(typeof(ChapterRush).GetMethod("PreSyncLevelRushAchievements"));
+            harmony.Patch(target, patch);
         }
 
         public static void PostSetLevelRush() => chapterRush = false;
@@ -172,6 +176,11 @@ namespace ChapterRush
         {
             if (chapterRush) return false;
             return true;
+        }
+
+        public static bool PreSyncLevelRushAchievements()
+        {
+            return false;
         }
     }
 }
