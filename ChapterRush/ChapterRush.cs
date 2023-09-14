@@ -85,6 +85,16 @@ namespace ChapterRush
             target = typeof(Achievements).GetMethod("SyncLevelRushAchievements", flags);
             patch = new(typeof(ChapterRush).GetMethod("PreSyncLevelRushAchievements"));
             harmony.Patch(target, patch);
+
+            target = typeof(LevelRush).GetMethod("OnQuitLevelRush", flags);
+            patch = new(typeof(ChapterRush).GetMethod("PostOnQuitLevelRush"));
+            harmony.Patch(target, null, patch);
+        }
+
+        public static void PostOnQuitLevelRush()
+        {
+            Debug.Log("TRIGGER!!111!");
+            chapterRush = false;
         }
 
         public static void PostSetLevelRush() => chapterRush = false;
