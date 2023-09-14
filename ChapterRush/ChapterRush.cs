@@ -93,7 +93,6 @@ namespace ChapterRush
 
         public static void PostOnQuitLevelRush()
         {
-            Debug.Log("TRIGGER!!111!");
             chapterRush = false;
         }
 

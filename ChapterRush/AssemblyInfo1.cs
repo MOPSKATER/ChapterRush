@@ -19,4 +19,4 @@ using System.Runtime.InteropServices;
 // bereitgestellt wird.
 
 [assembly: Guid("fc0e7bb7-7388-4d64-9263-dacd9ab0ae6d")]
-[assembly: MelonInfo(typeof(ChapterRush.ChapterRush), "ChapterRush", "1.0.0", "MOPSKATER")]
+[assembly: MelonInfo(typeof(ChapterRush.ChapterRush), "ChapterRush", "1.0.1", "MOPSKATER")]
